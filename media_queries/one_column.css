@@ -272,3 +272,59 @@ footer nav[role="navigation"] li a:focus {
 footer nav[role="navigation"] a {
     color: #999
 }
+
+/*******************Adjustment Breakpoint*******************/
+@media all and (min-width: 600px) {
+    .slats li {
+        float: left;
+        margin-right: 2%;
+        width: 32%;
+    }
+    .slats li:last-child{
+        margin-right: 0;
+    }
+}
+
+@media all and (min-width: 812px) {
+    aside  {
+        padding:0 1%;
+        width: auto;
+    }
+    aside section {
+        float: left;
+        width: 48%;
+        margin-right: 2%
+    }
+    aside .article-tags {
+        clear: both;
+    }
+
+    aside .ad {
+        text-align: center;
+        padding-top: 2.5em;
+    }
+
+    nav[role="navigation"] li {
+        float: left;
+        border-top: 0;
+    }
+
+    footer[role="contentinfo"] .top {
+        float: right;
+    }
+}
+
+@media all and (min-width:960px) {
+    .main {
+        display: table-cell;
+        padding-right: 2.5316456%; /* 24px / 948px */
+    }
+    aside {
+        display: table-cell;
+        width: 300px;
+    }
+    aside section{
+        float: none;
+        width: 100%;
+    }
+}
