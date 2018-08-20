@@ -29,6 +29,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display:block;
 }
 
+a {
+    color: rgb(157,0,0);
+    text-decoration: none;
+}
+
 a:hover {
     text-decoration: underline
 }
@@ -44,13 +49,54 @@ table {
 }
 
 h1 {
-    font-family: 'ChunkFiveRegular', Georgia, serif;
+    font-family: Georgia, serif;
     font-size: 2.5em; /* 40px / 16px */
     line-height: 1.2em; /* 48px / 40px */
     margin-bottom: .4em;/* 16px / 40px */
     margin-top: .4em; /* 16px / 40px */
 }
 
+h2 {
+    border-bottom: 2px solid #dbdbdb;
+    font-family: Georgia, serif;
+    font-size: 1.5em; /* 24px/16px */
+    line-height: 1em;
+    margin-bottom: .666666667em; /* 16px / 24px */
+    margin-top: 1em;
+}
+
+aside section {
+    /*clear:both; is not the best way because there will be overlaps here*/
+    /*But overflow hidden will resolve this awkward behavior*/
+    overflow: hidden;
+}
+
+cite {
+    display: block;
+    font-style: normal;
+    text-align: right;
+}
+
+blockquote {
+    font-style: italic;
+    margin-bottom: 1.5em;
+    padding-left: 1em;
+    quotes: none;
+}
+
+blockquote:before{
+    float: left;
+    font-size: 2.5em;
+    font-style: normal;
+    left: -.4em;
+    position: relative;
+    content:'\201C'
+}
+
+.more-stories {
+    padding-top: 1.5em;
+    clear: both;
+}
 /*******************BASE STYLE*********************/
 body {
     background: #fff;
@@ -126,6 +172,16 @@ ul.tags li a:active {
 ul.tags li a:hover,
 ul.tags li a:focus {
     background-color: #333
+}
+
+.related li {
+    list-style-type: none
+}
+
+.related a{
+    display:block;
+    border-bottom: 1px dotted #999;
+    padding: .3125em 0; /* 5px / 16px */
 }
 /*******************Nav*********************/
 nav[role="navigation"] {
