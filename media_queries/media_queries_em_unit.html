@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="media_queries_em_unit.css" />
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    <link rel="stylesheet" href="ie-2.css" media="all">
+    <![endif]-->
 </head>
 
 <body id="top">
@@ -172,6 +175,16 @@
     </div><!-- /.inner -->
 </footer>
 <script>
+    var Utils = {
+        classToggle: function( element, tclass ) {
+            var classes = element.className,
+                pattern = new RegExp( tclass );
+            hasClass = pattern.test( classes );
+            //toggle the class
+            classes = hasClass ? classes.replace( pattern, '' ) : classes + ' ' + tclass;
+            element.className = classes.trim();
+        }
+    };
     window.onload = function() {
         var nav = document.getElementById('nav');
         var navItem = nav.getElementsByTagName('li');
@@ -180,21 +193,11 @@
 
         if (floated != 'left') {
             var collapse = document.getElementById('nav-collapse');
-
-            //toggle class utility function
-            var classToggle = function( element, tclass ) {
-                var classes = element.className,
-                    pattern = new RegExp( tclass );
-                hasClass = pattern.test( classes );
-                //toggle the class
-                classes = hasClass ? classes.replace( pattern, '' ) : classes + ' ' + tclass;
-                element.className = classes.trim();
-            };
-
-            classToggle(nav, 'hide');
-            classToggle(collapse, 'active');
+            Utils.classToggle(nav, 'hide');
+            Utils.classToggle(collapse, 'active');
             collapse.onclick = function() {
-                classToggle(nav, 'hide');
+                debugger;
+                Utils.classToggle(nav, 'hide');
                 return false;
             }
         }
