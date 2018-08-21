@@ -1,0 +1,8 @@
+1. Learning Stuff
+http://implementingresponsivedesign.com
+
+2. Detect media query in responsive websites.
+https://seesparkbox.com/foundry/media_query_bookmarklet
+
+3. Responsive Navigation Design -
+http://bradfrost.com/blog/web/responsive-nav-patterns/

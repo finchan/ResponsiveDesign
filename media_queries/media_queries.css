@@ -328,3 +328,24 @@ footer nav[role="navigation"] a {
         width: 100%;
     }
 }
+
+@media all and (min-width:1300px) {
+    .main section{
+        column-count: 2; /*IE10, Opera*/
+        -webkit-column-count: 2; /*Safari, Chrome*/
+        -moz-column-count: 2; /*Firefox*/
+        column-gap: 1.5em;
+        -webkit-column-gap: 1.5em;
+        -moz-column-gap: 1.5em;
+        column-rule: 1px dotted #CCC;
+        -webkit-column-rule: 1px dotted #CCC;
+        -moz-column-rule: 1px dotted #CCC;
+    }
+    .main section img{
+        margin-botton: 1em;
+    }
+
+    .main .articleInfo{
+        border-bottom: 2px solid #dbdbdb;
+    }
+}

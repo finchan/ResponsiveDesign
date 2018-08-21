@@ -4,12 +4,13 @@
     <title>Yet Another Sports Site</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="one_column.css" />
+    <link rel="stylesheet" href="media_queries_em_unit.css" />
 </head>
 
 <body id="top">
 <nav role="navigation">
     <div class="inner">
+        <a href="#nav" class="nav-collapse" id="nav-collapse">Menu</a>
         <ul class="nav" id="nav">
             <li class="active"><a href="#">Football</a></li>
             <li><a href="#">Baseball</a></li>
@@ -170,6 +171,34 @@
         </nav>
     </div><!-- /.inner -->
 </footer>
+<script>
+    window.onload = function() {
+        var nav = document.getElementById('nav');
+        var navItem = nav.getElementsByTagName('li');
+        //is it floated?
+        var floated = navItem[0].currentStyle ? el.currentStyle['float'] : document.defaultView.getComputedStyle(navItem[0],null).getPropertyValue('float');
 
+        if (floated != 'left') {
+            var collapse = document.getElementById('nav-collapse');
+
+            //toggle class utility function
+            var classToggle = function( element, tclass ) {
+                var classes = element.className,
+                    pattern = new RegExp( tclass );
+                hasClass = pattern.test( classes );
+                //toggle the class
+                classes = hasClass ? classes.replace( pattern, '' ) : classes + ' ' + tclass;
+                element.className = classes.trim();
+            };
+
+            classToggle(nav, 'hide');
+            classToggle(collapse, 'active');
+            collapse.onclick = function() {
+                classToggle(nav, 'hide');
+                return false;
+            }
+        }
+    }
+</script>
 </body>
 </html>
